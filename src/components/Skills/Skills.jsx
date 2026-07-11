@@ -1,69 +1,164 @@
 import "./Skills.css";
 import { motion } from "framer-motion";
 
+import {
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaBootstrap,
+  FaNodeJs,
+  FaJava,
+  FaGitAlt,
+  FaGithub,
+  FaDatabase,
+} from "react-icons/fa";
+
+import {
+  SiNextdotjs,
+  SiJavascript,
+  SiSpringboot,
+  SiExpress,
+  SiMongodb,
+  SiMysql,
+  SiPostgresql,
+  SiTailwindcss,
+  SiPostman,
+  SiVercel,
+  SiNetlify,
+  SiVite,
+} from "react-icons/si";
+
+const skillCategories = [
+  {
+    title: "Frontend",
+    items: [
+      { name: "HTML5", icon: <FaHtml5 /> },
+      { name: "CSS3", icon: <FaCss3Alt /> },
+      { name: "JavaScript", icon: <SiJavascript /> },
+      { name: "React.js", icon: <FaReact /> },
+      { name: "Next.js", icon: <SiNextdotjs /> },
+      { name: "Bootstrap", icon: <FaBootstrap /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+    ],
+  },
+
+  {
+    title: "Backend",
+    items: [
+      { name: "Java", icon: <FaJava /> },
+      { name: "Spring Boot", icon: <SiSpringboot /> },
+      { name: "Node.js", icon: <FaNodeJs /> },
+      { name: "Express.js", icon: <SiExpress /> },
+      { name: "REST API", icon: <FaDatabase /> },
+    ],
+  },
+
+  {
+    title: "Database",
+    items: [
+      { name: "MySQL", icon: <SiMysql /> },
+      { name: "PostgreSQL", icon: <SiPostgresql /> },
+      { name: "MongoDB", icon: <SiMongodb /> },
+    ],
+  },
+
+  {
+    title: "Tools & Platforms",
+    items: [
+      { name: "Git", icon: <FaGitAlt /> },
+      { name: "GitHub", icon: <FaGithub /> },
+      { name: "Postman", icon: <SiPostman /> },
+      { name: "Vercel", icon: <SiVercel /> },
+      { name: "Netlify", icon: <SiNetlify /> },
+      { name: "Vite", icon: <SiVite /> },
+    ],
+  },
+];
+
 function Skills() {
-  const skillData = [
-    {
-      title: "Frontend",
-      skills: ["HTML5", "CSS3", "JavaScript", "React.js", "Next.js"],
-    },
-    {
-      title: "Backend",
-      skills: ["Java", "Spring Boot", "Express.js", "REST API"],
-    },
-    {
-      title: "Database",
-      skills: ["MySQL", "MongoDB"],
-    },
-    {
-      title: "Tools",
-      skills: ["Git", "GitHub", "VS Code", "Postman"],
-    },
-  ];
-
   return (
-    <section className="skills" id="skills">
-      <div className="skills-container">
-        <motion.h2
-          initial={{ opacity: 0, y: -40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          My Skills
-        </motion.h2>
+    <section className="skills section" id="skills">
 
-        <motion.p
-          className="skills-subtitle"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
+      {/* Background Blur */}
+      <div className="skills-blur blur-left"></div>
+      <div className="skills-blur blur-right"></div>
+
+      <div className="container">
+
+        <motion.div
+          className="skills-header"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          Technologies and tools I use to build modern web applications.
-        </motion.p>
+          <p className="section-tag">MY SKILLS</p>
+
+          <h2>
+            Technologies I Use To Build
+            <span> Modern Applications</span>
+          </h2>
+
+          <p>
+            I enjoy working with modern frontend, backend, databases and
+            development tools to create fast, scalable and user-friendly
+            applications.
+          </p>
+        </motion.div>
 
         <div className="skills-grid">
-          {skillData.map((category, index) => (
+
+          {skillCategories.map((category, index) => (
+
             <motion.div
-              className="skill-card"
               key={index}
-              initial={{ opacity: 0, y: 50 }}
+              className="skill-card"
+              initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.15,
+              }}
               viewport={{ once: true }}
+              whileHover={{
+                y: -8,
+              }}
             >
+
               <h3>{category.title}</h3>
 
-              <div className="skill-list">
-                {category.skills.map((skill, i) => (
-                  <span key={i}>{skill}</span>
+              <div className="skill-items">
+
+                {category.items.map((skill, i) => (
+
+                  <motion.div
+                    key={i}
+                    className="skill-item"
+                    whileHover={{
+                      scale: 1.08,
+                    }}
+                  >
+
+                    <div className="skill-icon">
+                      {skill.icon}
+                    </div>
+
+                    <span>{skill.name}</span>
+
+                  </motion.div>
+
                 ))}
+
               </div>
+
             </motion.div>
+
           ))}
+
         </div>
+
       </div>
+
     </section>
   );
 }
