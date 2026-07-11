@@ -1,0 +1,158 @@
+/* ===========================
+   EXPERIENCE SECTION
+=========================== */
+
+.experience {
+  padding: 100px 8%;
+  background: #0f172a;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.experience-title {
+  text-align: center;
+  font-size: 45px;
+  color: white;
+  margin-bottom: 70px;
+  position: relative;
+}
+
+.experience-title::after {
+  content: "";
+  width: 90px;
+  height: 4px;
+  background: #3b82f6;
+  display: block;
+  margin: 15px auto 0;
+  border-radius: 20px;
+}
+
+/* ===========================
+   TIMELINE
+=========================== */
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 35px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: rgba(59, 130, 246, 0.5);
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline-icon {
+  min-width: 70px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #3b82f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 2;
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
+}
+
+.timeline-content {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 25px;
+  transition: 0.3s;
+}
+
+.timeline-content:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(59,130,246,0.25);
+}
+
+.timeline-content span {
+  color: #60a5fa;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.timeline-content h3 {
+  color: white;
+  margin: 10px 0;
+  font-size: 24px;
+}
+
+.timeline-content h4 {
+  color: #cbd5e1;
+  font-size: 17px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.timeline-content p {
+  color: #94a3b8;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 768px) {
+
+  .experience {
+    padding: 80px 20px;
+  }
+
+  .experience-title {
+    font-size: 34px;
+  }
+
+  .timeline::before {
+    left: 25px;
+  }
+
+  .timeline-item {
+    gap: 18px;
+  }
+
+  .timeline-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+  }
+
+  .timeline-content {
+    padding: 18px;
+  }
+
+  .timeline-content h3 {
+    font-size: 20px;
+  }
+
+  .timeline-content h4 {
+    font-size: 15px;
+  }
+
+  .timeline-content p {
+    font-size: 14px;
+  }
+}
