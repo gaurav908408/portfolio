@@ -38,12 +38,12 @@ export default function Contact() {
 
             <div className="info-box">
               <FaEnvelope />
-              <span>YOUR_EMAIL@gmail.com</span>
+              <span>gauravkaushik882@gmail.com</span>
             </div>
 
             <div className="info-box">
               <FaPhoneAlt />
-              <span>+91 XXXXXXXXXX</span>
+              <span>+91 9084081634</span>
             </div>
 
             <div className="info-box">
