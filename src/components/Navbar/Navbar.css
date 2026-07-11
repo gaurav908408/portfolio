@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+/* ===========================
+   NAVBAR
+=========================== */
+
 .navbar {
   position: sticky;
   top: 0;
@@ -16,24 +20,35 @@
 
   padding: 0 8%;
 
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(22,163,74,.15);
+
+  box-shadow: 0 10px 30px rgba(22,163,74,.08);
 
   z-index: 1000;
 }
 
+/* ===========================
+   LOGO
+=========================== */
+
 .logo {
-  color: white;
+  color: #14532d;
   font-size: 28px;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
 }
 
 .logo span {
-  color: #3b82f6;
+  color: #16a34a;
 }
+
+/* ===========================
+   NAV LINKS
+=========================== */
 
 .nav-links {
   display: flex;
@@ -42,56 +57,118 @@
 }
 
 .nav-links a {
-  color: white;
+  color: #14532d;
   text-decoration: none;
   font-size: 17px;
-  transition: .3s;
+  font-weight: 500;
+  transition: .35s;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #16a34a;
+  transition: .35s;
 }
 
 .nav-links a:hover {
-  color: #3b82f6;
+  color: #16a34a;
 }
 
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ===========================
+   RESUME BUTTON
+=========================== */
+
 .resume-btn {
-  padding: 10px 18px;
-  background: #3b82f6;
-  border-radius: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(
+    90deg,
+    #16a34a,
+    #22c55e
+  );
+  color: white !important;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(22,163,74,.25);
 }
 
 .resume-btn:hover {
-  background: #2563eb;
-  color: white !important;
+  background: linear-gradient(
+    90deg,
+    #15803d,
+    #16a34a
+  );
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(22,163,74,.35);
 }
+
+.resume-btn::after {
+  display: none;
+}
+
+/* ===========================
+   MENU ICON
+=========================== */
 
 .menu-icon {
   display: none;
-  color: white;
+  color: #14532d;
   font-size: 28px;
   cursor: pointer;
 }
 
-/* ---------- Mobile ---------- */
+/* ===========================
+   MOBILE
+=========================== */
 
 @media (max-width:768px){
 
-.nav-links{
+  .navbar{
+    padding:0 20px;
+  }
+
+  .nav-links{
     position:absolute;
     top:75px;
     left:-100%;
+
     width:100%;
-    background:#0f172a;
+
+    background:#dcfce7;
+
     flex-direction:column;
+
     text-align:center;
+
     padding:30px 0;
+
     transition:.4s;
-}
 
-.nav-links.active{
+    border-bottom:1px solid rgba(22,163,74,.15);
+
+  }
+
+  .nav-links.active{
     left:0;
-}
+  }
 
-.menu-icon{
+  .nav-links a{
+    color:#14532d;
+    font-size:18px;
+  }
+
+  .menu-icon{
     display:block;
-}
+    color:#14532d;
+  }
 
 }
