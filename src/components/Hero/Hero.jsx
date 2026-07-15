@@ -24,12 +24,9 @@ import {
 function Hero() {
   return (
     <section className="hero" id="home">
-
       <div className="hero-content">
 
-        {/* =========================
-            LEFT SIDE
-        ========================== */}
+        {/* LEFT SIDE */}
 
         <motion.div
           className="hero-text"
@@ -81,7 +78,8 @@ function Hero() {
 
             <a
               href="/resume.pdf"
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn secondary"
             >
               <FaDownload />
@@ -95,20 +93,20 @@ function Hero() {
             <a
               href="https://github.com/gaurav908408"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               <FaGithub />
             </a>
 
             <a
-              href="YOUR_LINKEDIN_LINK"
+              href="https://www.linkedin.com/in/gaurav-kaushik-178078271/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               <FaLinkedin />
             </a>
 
-            <a href="mailto:YOUR_EMAIL@gmail.com">
+            <a href="mailto:gauravkaushik882@gmail.com">
               <FaEnvelope />
             </a>
 
@@ -134,9 +132,8 @@ function Hero() {
           </div>
 
         </motion.div>
-                {/* =========================
-            RIGHT SIDE
-        ========================== */}
+
+        {/* RIGHT SIDE */}
 
         <motion.div
           className="hero-image"
@@ -144,14 +141,13 @@ function Hero() {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
+
           <div className="image-card">
 
             <img
               src={profile}
               alt="Gaurav Kaushik"
             />
-
-            {/* Floating Tech Icons */}
 
             <div className="floating-icons">
 
@@ -182,6 +178,7 @@ function Hero() {
             </div>
 
           </div>
+
         </motion.div>
 
       </div>
